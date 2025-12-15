@@ -1,10 +1,9 @@
+import IncrementCounter from '@/components/IncrementCounter'
 import { createFileRoute } from '@tanstack/react-router'
-import React, { useState } from 'react'
 
 export const Route = createFileRoute('/')({ component: App })
 
 function App() {
-  const [count, setCount] = useState(0)
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
       <section className="relative py-20 px-6 text-center overflow-hidden">
@@ -34,22 +33,7 @@ function App() {
         </div>
       </section>
 
-      {/* Increment Count */}
-      <section>
-        <div className="relative py-12 px-6 text-center">
-          <div className="max-w-3xl mx-auto">
-            <button
-              onClick={() => setCount((c) => c + 1)}
-              className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
-            >
-              Increment Count +
-            </button>
-            <p className="mt-4 text-xl text-gray-300">
-              Current Count: <span className="font-bold">{count}</span>
-            </p>
-          </div>
-        </div>
-      </section>
+      <IncrementCounter />
     </div>
   )
 }
