@@ -1,4 +1,4 @@
-import { Chat } from '@/components/Chat'
+import { ChatPro } from '@/components/ChatPro'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/chat')({
@@ -8,8 +8,7 @@ export const Route = createFileRoute('/chat')({
 function RouteComponent() {
   return (
     <div>
-      <h1>Chat Page</h1>
-      <Chat />
+      <ChatPro />
     </div>
   )
 }

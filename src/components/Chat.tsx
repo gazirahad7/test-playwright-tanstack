@@ -9,6 +9,8 @@ export function Chat() {
     connection: fetchServerSentEvents('/api/chat'),
   })
 
+  console.log('messages', messages)
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     if (input.trim() && !isLoading) {
