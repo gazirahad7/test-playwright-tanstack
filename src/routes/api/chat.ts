@@ -26,7 +26,7 @@ export async function POST({ request }: { request: Request }) {
 
   const { messages, conversationId } = await request.json()
 
-  //console.log('m', messages)
+  console.log('m', messages)
 
   try {
     // Create a streaming chat response
@@ -76,8 +76,10 @@ const getTodosToolDef = toolDefinition({
 const getTodosTool = getTodosToolDef.server(async ({ query }) => {
   const url = new URL('https://jsonplaceholder.typicode.com/todos')
   if (query) url.searchParams.set('q', query)
+  console.log('query', query)
   console.log(url.toString())
 
   const response = await fetch(url.toString())
+  console.log('response', response)
   return await response.json()
 })

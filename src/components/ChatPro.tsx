@@ -65,7 +65,10 @@ export function ChatPro() {
             <div className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-emerald-500 rounded-full border-2 border-white"></div>
           </div>
           <div className="flex-1">
-            <h1 className="font-semibold text-slate-900 text-lg">
+            <h1
+              className="font-semibold text-slate-900 text-lg"
+              id="chat-title"
+            >
               AI Assistant
             </h1>
             <p className="text-xs text-slate-500 flex items-center gap-1.5">
@@ -226,6 +229,8 @@ export function ChatPro() {
               <textarea
                 ref={textareaRef}
                 value={input}
+                name="chat-input"
+                id="chat-input"
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Ask me anything..."
