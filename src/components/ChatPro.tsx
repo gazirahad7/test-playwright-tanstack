@@ -221,7 +221,7 @@ export function ChatPro() {
       {/* Input Area */}
       <div className="bg-white/80 backdrop-blur-xl border-t border-slate-200/50 shadow-2xl">
         <div className="max-w-5xl mx-auto px-6 py-5">
-          <div className="flex gap-3 items-end">
+          <div className="flex gap-3 items-center">
             <div className="flex-1 relative group">
               <textarea
                 ref={textareaRef}

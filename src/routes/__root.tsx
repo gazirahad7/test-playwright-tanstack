@@ -1,10 +1,11 @@
+import { TanStackDevtools } from '@tanstack/react-devtools'
 import {
   HeadContent,
   Scripts,
   createRootRouteWithContext,
+  useRouterState,
 } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
-import { TanStackDevtools } from '@tanstack/react-devtools'
 
 import Header from '../components/Header'
 
@@ -48,13 +49,17 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 })
 
 function RootDocument({ children }: { children: React.ReactNode }) {
+  const routerState = useRouterState()
+  const currentPath = routerState.location.pathname
+  const shouldShowHeader = currentPath !== '/chat'
+
   return (
     <html lang="en">
       <head>
         <HeadContent />
       </head>
       <body>
-        <Header />
+        {shouldShowHeader && <Header />}
         {children}
         <TanStackDevtools
           config={{
